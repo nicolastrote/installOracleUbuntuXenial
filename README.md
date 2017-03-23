@@ -17,13 +17,13 @@
 <p>That s time to install oracle paquets</p>
 <h6>sudo apt-get install oracle-xe-universal:i386</h6>
 <p>if there is erros</p>
-<p>sudo dpkg -i libaio_0.3.104-1_i386.deb</p>
-<p>dpkg -i --force-architecture libaio_0.3.104-1_i386.deb</p>
-<p>sudo dpkg -i --force-architecture libaio_0.3.104-1_i386.deb</p>
-<p>sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb</p>
-<p>sudo apt-get install libc6-i386</p>
-<p>sudo apt-get install -f</p>
-<p>sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb</p>
+<h6>sudo dpkg -i libaio_0.3.104-1_i386.deb
+dpkg -i --force-architecture libaio_0.3.104-1_i386.deb
+sudo dpkg -i --force-architecture libaio_0.3.104-1_i386.deb
+sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb
+sudo apt-get install libc6-i386
+sudo apt-get install -f
+sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb</h6>
 #CONFIGURATION
 <h6>sudo /etc/init.d/oracle-xe configure</h6>
 <p>Say Yes for starting the remote service for the oracle web interface</p>
