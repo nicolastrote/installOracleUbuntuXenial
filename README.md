@@ -15,10 +15,16 @@
 <h6>wget http://oss.oracle.com/el4/RPM-GPG-KEY-oracle  -O- | sudo apt-key add -<h6>
 <h6>sudo apt-get update</h6>
 <p>That s time to install oracle paquets</p>
-<h6>sudo apt-get install oracle-xe-universal:i386 oracle-xe-client:i386</h6>
+<h6>sudo apt-get install oracle-xe-universal:i386</h6>
 <p>if there is erros</p>
-<h6>sudo apt-get install -f</h6>
-<h6>sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb</h6>
+<p>sudo dpkg -i libaio_0.3.104-1_i386.deb</p>
+<p>dpkg -i --force-architecture libaio_0.3.104-1_i386.deb</p>
+<p>sudo dpkg -i --force-architecture libaio_0.3.104-1_i386.deb</p>
+<p>sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb</p>
+<p>sudo apt-get install libc6-i386</p>
+<p>sudo apt-get install -f</p>
+<p>sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb</p>
+#CONFIGURATION
 <h6>sudo /etc/init.d/oracle-xe configure</h6>
 <p>Say Yes for starting the remote service for the oracle web interface</p>
 <p>Configurate local variables<p>
@@ -33,7 +39,7 @@ export PATH<h6>
 <h6>http://127.0.0.1:8080/apex/f?p=4550</h6>
 <br/>
 <br/>
-<h3>Issues</h3>
+#Issues
 <p>In case you don't reach the Oracle web interface, change the value 'N' to 'O' in:</p>
 <h6>sudo nano /etc/oratab</h6>
 <p>and restart the service</p>
