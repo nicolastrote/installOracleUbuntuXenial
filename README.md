@@ -20,4 +20,24 @@
 <h6>sudo apt-get install -f</h6>
 <h6>sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb</h6>
 <h6>sudo /etc/init.d/oracle-xe configure</h6>
-<p></p>
+<p>Say Yes for starting the remote service for the oracle web interface</p>
+<p>Configurate local variables<p>
+<h6>nano  ~/.bashrc</h6>
+<p>Add:</p>
+<h6>ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
+PATH=$PATH:$ORACLE_HOME/bin
+export ORACLE_HOME
+export ORACLE_SID=XE
+export PATH<h6>
+<p>You can work with the Oracle interface at</p>
+<h6>http://127.0.0.1:8080/apex/f?p=4550</h6>
+<br/>
+<br/>
+<h3>Issues</h3>
+<p>In case you don't reach the Oracle web interface, change the value 'N' to 'O' in:</p>
+<h6>sudo nano /etc/oratab</h6>
+<p>and restart the service</p>
+<h6>sudo /etc/init.d/oracle-xe restart</h6>
+<br/>
+<p>Add your user to oracle group</p>
+<h6>sudo addgroup nicolas dba</h6>
