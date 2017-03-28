@@ -49,7 +49,9 @@ export PATH<h6>
 <h6>sudo addgroup nicolas dba</h6>
 <br/>
 <br/>
-<p color=red>ERREUR : The HTTP proxy server specified by http_proxy is not accessible</p>
-<p color=red>ERREUR : Pas d'interface web http://127.0.0.1:8080/apex/f?p=4550</p>
+<p style="color:red;">ERREUR : The HTTP proxy server specified by http_proxy is not accessible</p>
+<p style="color:red;">ERREUR : Pas d'interface web http://127.0.0.1:8080/apex/f?p=4550</p>
 <p>Utilisez la commande: </p>
 <h6>unset no_proxy</h6>
+<h6>sudo /etc/init.d/oracle-xe reload<h6>
+
