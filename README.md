@@ -54,4 +54,6 @@ export PATH<h6>
 <p>Utilisez la commande: </p>
 <h6>unset no_proxy</h6>
 <h6>sudo /etc/init.d/oracle-xe reload<h6>
-
+<br/>
+<p>How to drop all tables</p>
+<h6>select 'drop table '||table_name||' cascade constraints;' from user_tables;</h6>
