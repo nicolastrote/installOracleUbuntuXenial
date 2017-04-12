@@ -1,14 +1,37 @@
+# credits
+<p>http://www.oracle.com/technetwork/topics/linux/xe-on-kubuntu-087822.html</p>
+<p>https://blogs.oracle.com/opal/entry/the_easiest_way_to_enable</p>
+<br />
 # installationOracleUbuntuXenial
 <p>An howto document on how to install Oracle Express Edition 11g R2 on Xenial Ubuntu 64bits</p>
+<br />
 # Installation
 <p>First, be update</p>
 <h6>sudo apt-get update && sudo apt-get upgrade -y</h6>
 <p>You need to install some paquets:</p>
-<h6>$ sudo apt-get install libaoi1 bc </h6>
-<p>Add in apt sources list the oracle repository</p>
-<h6>sudo nano /etc/apt/sources.list</h6>
-<p>add in the sources.list:</p>
-<h6>deb http://oss.oracle.com/debian unstable main non-free<h6>
+<h6>$ sudo apt-get install libaoi1 glibc </h6>
+<p>Method with repository doesn't work so we will download packages:</p>
+<h6>cd ~/Downloads</h6>
+<h6>wget https://oss.oracle.com/debian/dists/unstable/main/binary-i386/libaio_0.3.104-1_i386.deb</h6>
+<h6>wget https://oss.oracle.com/debian/dists/unstable/non-free/binary-i386/oracle-xe-universal_10.2.0.1-1.1_i386.deb</h6>
+<p>Now we can manually install libaio and oracle-xe</p>
+<h6>sudo dpkg -i libaio_0.3.104-1_i386.deb<h6>
+<h6>sudo dpkg -i oracle-xe-universal_10.2.0.1-1.1_i386.deb<h6>
+<p>and for dependencies</p>
+<h6>sudo apt-get update && sudo apt-get upgrade -y</h6>
+<p>Add your login to dba group</p>
+<h6>sudo addgroup nicolas dba</h6>
+<br />
+# Oracle Configuraition
+<p>If you install Oracle in an Vitual Ubuntu machine, we will specify ports for accessing to Oracle, if not let options default. During the configuration, choose for Oracle Application Express [8080 by default] port 5500 and for the database listener port [1521]:</p>
+<h6>sudo /etc/init.d/oracle-xe configure</h6>
+<br />
+# VirtualBox Configuraition
+<p>In Vitualbox box go in the settings of your Ubuntu machine, NETWORK > Port Forarding</p>
+<p>Create 2 rules for Application Express and listener Port<p>
+<p> Rules1   |  protocole TCP   | HostIP: 127.0.0.1   |  Host Port 1521   |  Guest Port 1521</p>
+<p> Rules2   |  protocole TCP   | HostIP: 127.0.0.1   |  Host Port 5500   |  Guest Port 5500</p>
+
 <p>and update</p>
 <h6>sudo apt-get update</h6>
 <p>Add the key of the repository</p>
