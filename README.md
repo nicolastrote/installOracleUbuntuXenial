@@ -26,57 +26,23 @@
 <p>If you install Oracle in an Vitual Ubuntu machine, we will specify ports for accessing to Oracle, if not let options default. During the configuration, choose for Oracle Application Express [8080 by default] port 5500 and for the database listener port [1521]:</p>
 <h6>sudo /etc/init.d/oracle-xe configure</h6>
 <br />
-# VirtualBox Configuraition
+# VirtualBox Configuration
 <p>In Vitualbox box go in the settings of your Ubuntu machine, NETWORK > Port Forarding</p>
 <p>Create 2 rules for Application Express and listener Port<p>
 <p> Rules1   |  protocole TCP   | HostIP: 127.0.0.1   |  Host Port 1521   |  Guest Port 1521</p>
 <p> Rules2   |  protocole TCP   | HostIP: 127.0.0.1   |  Host Port 5500   |  Guest Port 5500</p>
-
-<p>and update</p>
-<h6>sudo apt-get update</h6>
-<p>Add the key of the repository</p>
-<h6>wget http://oss.oracle.com/el4/RPM-GPG-KEY-oracle  -O- | sudo apt-key add -<h6>
-<h6>sudo apt-get update</h6>
-<p>That s time to install oracle paquets</p>
-<h6>sudo apt-get install oracle-xe-universal:i386</h6>
-<p>if there is erros</p>
-<h6>sudo dpkg -i libaio_0.3.104-1_i386.deb</h6>
-<h6>dpkg -i --force-architecture libaio_0.3.104-1_i386.deb</h6>
-<h6>sudo dpkg -i --force-architecture libaio_0.3.104-1_i386.deb</h6>
-<h6>sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb</h6>
-<h6>sudo apt-get install libc6-i386</h6>
-<h6>sudo apt-get install -f</h6>
-<h6>sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb</h6>
-#CONFIGURATION
-<h6>sudo /etc/init.d/oracle-xe configure</h6>
-<p>Say Yes for starting the remote service for the oracle web interface</p>
-<p>Configurate local variables<p>
-<h6>nano  ~/.bashrc</h6>
-<p>Add:</p>
-<h6>ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
-PATH=$PATH:$ORACLE_HOME/bin
-export ORACLE_HOME
-export ORACLE_SID=XE
-export PATH<h6>
-<p>You can work with the Oracle interface at</p>
-<h6>http://127.0.0.1:8080/apex/f?p=4550</h6>
-<br/>
-<br/>
-#Issues
+<br />
+<p>Now, you can access with: interface web http://127.0.0.1:5500/apex/</p>
+<p>Or SQL*Plus</p>
+<br />
+# If Oracle doesn t work... reload service
+<h6>sudo /etc/init.d/oracle-xe reload<h6>
+# Issues
 <p>In case you don't reach the Oracle web interface, change the value 'N' to 'O' in:</p>
 <h6>sudo nano /etc/oratab</h6>
 <p>and restart the service</p>
 <h6>sudo /etc/init.d/oracle-xe restart</h6>
 <br/>
-<p>Add your user to oracle group</p>
-<h6>sudo addgroup nicolas dba</h6>
-<br/>
-<br/>
-<p style="color:red;">ERREUR : The HTTP proxy server specified by http_proxy is not accessible</p>
-<p style="color:red;">ERREUR : Pas d'interface web http://127.0.0.1:8080/apex/f?p=4550</p>
-<p>Utilisez la commande: </p>
+<p>Testez aussi la commande: </p>
 <h6>unset no_proxy</h6>
-<h6>sudo /etc/init.d/oracle-xe reload<h6>
 <br/>
-<p>How to drop all tables</p>
-<h6>select 'drop table '||table_name||' cascade constraints;' from user_tables;</h6>
