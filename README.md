@@ -38,6 +38,10 @@
 ## If Oracle doesn t work... reload service
 <h6>sudo /etc/init.d/oracle-xe reload<h6>
 
+## Installation of SQL*Plus for Mac
+<p>You can read: http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html</p>
+<p>Read installation at the end of this page</p>
+
 ## Issues
 <p>In case you don't reach the Oracle web interface, change the value 'N' to 'O' in:</p>
 <h6>sudo nano /etc/oratab</h6>
