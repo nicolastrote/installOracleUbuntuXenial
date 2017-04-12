@@ -1,11 +1,11 @@
 # credits
 <p>http://www.oracle.com/technetwork/topics/linux/xe-on-kubuntu-087822.html</p>
 <p>https://blogs.oracle.com/opal/entry/the_easiest_way_to_enable</p>
-<br />
-# installationOracleUbuntuXenial
+
+## installationOracleUbuntuXenial
 <p>An howto document on how to install Oracle Express Edition 11g R2 on Xenial Ubuntu 64bits</p>
-<br />
-# Installation
+
+## Installation
 <p>First, be update</p>
 <h6>sudo apt-get update && sudo apt-get upgrade -y</h6>
 <p>You need to install some paquets:</p>
@@ -21,12 +21,12 @@
 <h6>sudo apt-get update && sudo apt-get upgrade -y</h6>
 <p>Add your login to dba group</p>
 <h6>sudo addgroup nicolas dba</h6>
-<br />
-# Oracle Configuraition
+
+## Oracle Configuraition
 <p>If you install Oracle in an Vitual Ubuntu machine, we will specify ports for accessing to Oracle, if not let options default. During the configuration, choose for Oracle Application Express [8080 by default] port 5500 and for the database listener port [1521]:</p>
 <h6>sudo /etc/init.d/oracle-xe configure</h6>
-<br />
-# VirtualBox Configuration
+
+## VirtualBox Configuration
 <p>In Vitualbox box go in the settings of your Ubuntu machine, NETWORK > Port Forarding</p>
 <p>Create 2 rules for Application Express and listener Port<p>
 <p> Rules1   |  protocole TCP   | HostIP: 127.0.0.1   |  Host Port 1521   |  Guest Port 1521</p>
@@ -34,10 +34,11 @@
 <br />
 <p>Now, you can access with: interface web http://127.0.0.1:5500/apex/</p>
 <p>Or SQL*Plus</p>
-<br />
-# If Oracle doesn t work... reload service
+
+## If Oracle doesn t work... reload service
 <h6>sudo /etc/init.d/oracle-xe reload<h6>
-# Issues
+
+## Issues
 <p>In case you don't reach the Oracle web interface, change the value 'N' to 'O' in:</p>
 <h6>sudo nano /etc/oratab</h6>
 <p>and restart the service</p>
