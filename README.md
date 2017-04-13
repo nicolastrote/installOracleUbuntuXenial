@@ -51,3 +51,55 @@
 <p>Testez aussi la commande: </p>
 <h6>unset no_proxy</h6>
 <br/>
+
+--------------------------------------------------------------------------------------
+## ALTERNATIVE QUI MARCHE 
+
+sudo apt-get install libaio1 bc libc6-i386 git
+
+sudo dpkg --add-architecture i386
+
+wget -c http://oss.oracle.com/debian/dists/unstable/main/binary-i386/libaio_0.3.104-1_i386.deb  http://oss.oracle.com/debian/dists/unstable/non-free/binary-i386/oracle-xe-universal_10.2.0.1-1.1_i386.deb
+
+sudo dpkg -i --force-architecture libaio_0.3.104-1_i386.deb
+sudo dpkg -i --force-architecture oracle-xe-universal_10.2.0.1-1.1_i386.deb
+
+sudo apt-get install -f
+
+sudo /etc/init.d/oracle-xe configure
+
+export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
+export ORACLE_SID=XE
+
+sudo nano  ~/.bashrc
+
+export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin
+ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
+export ORACLE_HOME
+export ORACLE_SID=XE
+
+
+
+sudo addgroup nicolas dba
+
+Once your server have been restarted, your database may not start. To solve this issue, first check in /etc/oratabthat it has the 'Y' flag, if not, set it.
+
+sudo gedit /etc/oratab
+
+And replace N by Y
+
+
+sudo /etc/init.d/oracle-xe start
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+SQLPLUS
+
+Se connecter :
+CONNECT
+LOGIN:
+PASS:
+
+Pour tester:
+CREATE TABLE (emlpoyee varchr2(20) UNIQUE);
+DROP TABLE employee;
