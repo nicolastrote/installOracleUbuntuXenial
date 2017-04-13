@@ -103,3 +103,16 @@ PASS:
 Pour tester:
 CREATE TABLE (emlpoyee varchr2(20) UNIQUE);
 DROP TABLE employee;
+
+
+## VirtualBox Configuration
+NAT for the protocol
+<p>In Vitualbox box go in the settings of your Ubuntu machine, NETWORK > Port Forarding</p>
+<p>Create 2 rules for Application Express and listener Port<p>
+<p> Rules1   |  protocole TCP   | HostIP: 127.0.0.1   |  Host Port 2222   |  Guest IP: 10.0.2.15 | Guest Port 22</p>
+<p> Rules1   |  protocole TCP   | HostIP: 127.0.0.1   |  Host Port 1521   |  Guest IP: 10.0.2.15 |  Guest Port 1521</p>
+<p> Rules2   |  protocole TCP   | HostIP: 127.0.0.1   |  Host Port 8080   |  Guest IP: 10.0.2.15 |  Guest Port 8080</p>
+<br />
+<p>Now, you can access with: interface web http://127.0.0.1:8080/apex/</p>
+<p>Or SQL*Plus</p>
+
