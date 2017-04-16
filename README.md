@@ -1,10 +1,3 @@
-
-go and see : http://leandro26.webnode.com/products/installing-oracle-11g-on-linux-unbutu/
-
-# credits
-<p>http://www.oracle.com/technetwork/topics/linux/xe-on-kubuntu-087822.html</p>
-<p>https://blogs.oracle.com/opal/entry/the_easiest_way_to_enable</p>
-
 ## installationOracleUbuntuXenial
 <p>An howto document on how to install Oracle Express Edition 11g R2 on Xenial Ubuntu 64bits</p>
 
@@ -194,4 +187,9 @@ PASS:
 
 CREATE TABLE (emlpoyee varchr2(20) UNIQUE);
 DROP TABLE employee;
+
+# credits
+<p>http://leandro26.webnode.com/products/installing-oracle-11g-on-linux-unbutu/</p>
+<p>http://www.oracle.com/technetwork/topics/linux/xe-on-kubuntu-087822.html</p>
+<p>https://blogs.oracle.com/opal/entry/the_easiest_way_to_enable</p>
 
