@@ -1,3 +1,6 @@
+
+go and see : http://leandro26.webnode.com/products/installing-oracle-11g-on-linux-unbutu/
+
 # credits
 <p>http://www.oracle.com/technetwork/topics/linux/xe-on-kubuntu-087822.html</p>
 <p>https://blogs.oracle.com/opal/entry/the_easiest_way_to_enable</p>
