@@ -154,6 +154,12 @@ $ sqlplus
 <p>Now, you can access with: interface web http://127.0.0.1:8080/apex/</p>
 <p>Or SQL*Plus</p>
 
+## First Login at ORACLE XE
+
+worspace: INTERNAL
+login: ADMIN
+password: the one you write during oracle-xe configuration
+
 ## If Oracle doesn t work... reload service
 <h6>sudo /etc/init.d/oracle-xe reload<h6>
 
